@@ -1,0 +1,12 @@
+.div {
+    line-height: 2em;
+    font-size: 20px;
+}
+
+.div.light {
+    color: #333333;
+}
+
+.div.dark {
+    color: lightgrey;
+}

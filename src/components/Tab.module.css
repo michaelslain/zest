@@ -1,0 +1,22 @@
+.div {
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.05s linear;
+}
+
+.div.dark {
+    color: lightgrey;
+    text-shadow: 0 0 10px black;
+}
+
+.div.light {
+    color: grey;
+}
+
+.div.dark:hover {
+    color: white;
+}
+
+.div.light:hover {
+    color: black;
+}

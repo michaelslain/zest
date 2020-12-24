@@ -1,0 +1,10 @@
+.div {
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.05s ease-in-out;
+    font-weight: bold;
+}
+
+.div:hover {
+    filter: contrast(200%);
+}

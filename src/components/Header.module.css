@@ -1,0 +1,20 @@
+.div {
+    width: 50vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    z-index: 80;
+}
+
+.div.dark {
+    background: #070a12;
+}
+
+.div.light {
+    background: white;
+}

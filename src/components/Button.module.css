@@ -1,0 +1,71 @@
+.container {
+    outline: none;
+    font-weight: 550;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    background: transparent;
+    display: inline-block;
+    text-shadow: 0 0 30px white;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+}
+
+.container.light-text {
+    color: white;
+}
+
+.container.dark-text {
+    color: black;
+}
+
+.container,
+.background,
+.glow,
+.hover-background {
+    transition: all 0.1s ease-in-out;
+    border-radius: 2em;
+}
+
+.background,
+.glow,
+.hover-background {
+    position: absolute;
+    padding: 16px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    top: -8px;
+    left: -16px;
+    z-index: -2;
+}
+
+.hover-background {
+    background: transparent;
+}
+
+.glow {
+    z-index: -3;
+}
+
+.container.dark .glow {
+    filter: blur(30px);
+}
+
+.container.light .glow {
+    filter: blur(1px);
+}
+
+/* .container:hover {
+    color: #070a12;
+} */
+
+.container:hover .glow {
+    filter: blur(0px);
+}
+
+/* .container:hover .hover-background {
+    background: white;
+} */

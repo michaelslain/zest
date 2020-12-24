@@ -1,0 +1,13 @@
+.div {
+    color: white;
+    font-size: 100px;
+    margin: 0;
+}
+
+.div.dark {
+    color: white;
+}
+
+.div.light {
+    color: #333333;
+}
