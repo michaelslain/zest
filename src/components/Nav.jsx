@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Nav.module.css'
 
-export default function Nav({ children, style, className }) {
+export default function Nav({ children, style, className, id }) {
     const classes = [styles.div, className].join(' ')
 
     return (
-        <div className={classes} style={style}>
+        <div className={classes} style={style} id={id}>
             {children}
         </div>
     )
@@ -15,4 +15,5 @@ export default function Nav({ children, style, className }) {
 Nav.propTypes = {
     style: PropTypes.object,
     className: PropTypes.string,
+    id: PropTypes.string,
 }

@@ -17,7 +17,6 @@ export default function Website({ children, theme = defaultThemeContext }) {
         const bodyStyles = {
             background: theme.theme === 'dark' ? '#070a12' : 'white',
             overflowX: 'hidden',
-            scrollBehavior: 'smooth',
         }
 
         Object.entries(bodyStyles).forEach(entry => {
@@ -47,7 +46,6 @@ export default function Website({ children, theme = defaultThemeContext }) {
             i < contexts.length - 1
                 ? handleProviders(i + 1)
                 : children.map((child, i) => {
-                      console.log(child)
                       return (
                           <Route
                               key={i}

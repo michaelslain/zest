@@ -5,8 +5,17 @@ import styles from './Button.module.css'
 import ThemeContext from '../ThemeContext'
 import RouterContext from '../RouterContext'
 import { toRGB, getBrightness } from '../Color'
+import Scroll from '../Scroll'
 
-export default function Button({ children, style, className, link, callback }) {
+export default function Button({
+    children,
+    style,
+    className,
+    id,
+    link,
+    callback,
+    scrollTo,
+}) {
     const theme = useContext(ThemeContext)
     const reactRouter = useContext(RouterContext)
 
@@ -34,15 +43,19 @@ export default function Button({ children, style, className, link, callback }) {
 
     const hrefProp =
         link != null && !isRouterLink ? { href: link, target: '_blank' } : {}
+    const mouseUpProp =
+        scrollTo != null ? { onMouseUp: () => Scroll(scrollTo) } : {}
 
     return cloneElement(
         wrapper,
         {
             className: classes,
             style: { ...style },
+            id,
             onClick: callback,
             to: link,
             ...hrefProp,
+            ...mouseUpProp,
         },
         <Fragment>
             {children}
@@ -56,6 +69,8 @@ export default function Button({ children, style, className, link, callback }) {
 Button.propTypes = {
     style: PropTypes.object,
     className: PropTypes.string,
+    id: PropTypes.string,
     link: PropTypes.string,
     callback: PropTypes.func,
+    scrollTo: PropTypes.string,
 }

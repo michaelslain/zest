@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './Header.module.css'
 import ThemeContext from '../ThemeContext'
 
-export default function Header({ children, style, className }) {
+export default function Header({ children, style, className, id }) {
     const theme = useContext(ThemeContext)
 
     const extraStyle = {
@@ -15,7 +15,7 @@ export default function Header({ children, style, className }) {
     const classes = [styles.div, styles[theme.theme], className].join(' ')
 
     return (
-        <div className={classes} style={{ ...extraStyle, ...style }}>
+        <div className={classes} id={id} style={{ ...extraStyle, ...style }}>
             {children}
         </div>
     )
@@ -24,4 +24,5 @@ export default function Header({ children, style, className }) {
 Header.propTypes = {
     style: PropTypes.object,
     className: PropTypes.string,
+    id: PropTypes.string,
 }

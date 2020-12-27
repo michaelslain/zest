@@ -17,9 +17,9 @@ import 'zest/dist/index.css'
 
 export default function App() {
     const theme = {
-        theme: 'light',
-        primary: '#ff9966',
-        secondary: '#ff5e62',
+        theme: 'dark',
+        primary: '#ffe259',
+        secondary: '#ffa751',
     }
 
     return (
@@ -27,18 +27,18 @@ export default function App() {
             <Page>
                 <Header>
                     <Nav>
-                        <Tab>Home</Tab>
-                        <Tab>About</Tab>
+                        <Tab scrollTo='home'>Home</Tab>
+                        <Tab scrollTo='about'>About</Tab>
                         <Tab>Shop</Tab>
                         <Tab>Contact</Tab>
                     </Nav>
                 </Header>
-                <Hero alignment='center'>
+                <Hero alignment='center' id='home'>
                     {/* <img src={Logo} /> */}
                     <Heading>Chicken Wings</Heading>
                     <Button>Learn more</Button>
                 </Hero>
-                <Section>
+                <Section id='about'>
                     <Paragraph style={{ width: 1000, margin: 'auto' }}>
                         Lorem ipsum dolor sit amet,{' '}
                         <Link color='secondary' link='/hello'>

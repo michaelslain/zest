@@ -4,14 +4,17 @@ import styles from './Link.module.css'
 import { Link } from 'react-router-dom'
 import ThemeContext from '../ThemeContext'
 import RouterContext from '../RouterContext'
+import Scroll from '../Scroll'
 
 export default function Link2({
     children,
     style,
     className,
+    id,
     link,
     callback,
     color = 'primary',
+    scrollTo,
 }) {
     const theme = useContext(ThemeContext)
     const reactRouter = useContext(RouterContext)
@@ -25,15 +28,19 @@ export default function Link2({
 
     const hrefProp =
         link != null && !isRouterLink ? { href: link, target: '_blank' } : {}
+    const mouseUpProp =
+        scrollTo != null ? { onMouseUp: () => Scroll(scrollTo) } : {}
 
     return cloneElement(
         wrapper,
         {
             className: classes,
             style: { ...colorStyle, ...style },
+            id,
             onClick: callback,
             to: link,
             ...hrefProp,
+            ...mouseUpProp,
         },
         children,
     )
@@ -42,7 +49,9 @@ export default function Link2({
 Link.propTypes = {
     style: PropTypes.object,
     className: PropTypes.string,
+    id: PropTypes.string,
     link: PropTypes.string,
     callback: PropTypes.func,
     color: PropTypes.string,
+    scrollTo: PropTypes.string,
 }

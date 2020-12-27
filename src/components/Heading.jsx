@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import styles from './Heading.module.css'
 import ThemeContext from '../ThemeContext'
 
-export default function Heading({ children, className, style }) {
+export default function Heading({ children, className, style, id }) {
     const theme = useContext(ThemeContext)
 
     const classes = [styles.div, styles[theme.theme], className].join(' ')
 
     return (
-        <h1 className={classes} style={style}>
+        <h1 className={classes} style={style} id={id}>
             {children}
         </h1>
     )
@@ -18,4 +18,5 @@ export default function Heading({ children, className, style }) {
 Heading.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    id: PropTypes.string,
 }
